@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#007bff">
+  <title>Faturas Voo - Offline</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✈️ Faturas de Voos</h1>
+      <p>Salve faturas offline na memória do seu telefone</p>
+    </header>
+
+    <form id="passagemForm">
+      <div class="form-group">
+        <label for="nome">Nome do Passageiro:</label>
+        <input type="text" id="nome" placeholder="Ex: João Silva" required>
+      </div>
+
+      <div class="form-group">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" placeholder="Ex: LIS" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" placeholder="Ex: NYC" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dataVoo">Data do Voo:</label>
+        <input type="date" id="dataVoo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="companhia">Companhia Aérea:</label>
+        <input type="text" id="companhia" placeholder="Ex: TAP, LATAM" required>
+      </div>
+
+      <div class="form-group">
+        <label for="valor">Valor da Passagem (R$):</label>
+        <input type="number" id="valor" step="0.01" placeholder="Ex: 850.90" required>
+      </div>
+
+      <button type="button" onclick="gerarFatura()" class="btn-primary">
+        Gerar Fatura
+      </button>
+    </form>
+
+    <div id="faturaContainer" style="display:none;">
+      <div class="fatura-card">
+        <h2>Fatura Gerada</h2>
+        <div class="fatura-info">
+          <p><strong>Passageiro:</strong> <span id="fatura-nome"></span></p>
+          <p><strong>Rota:</strong> <span id="fatura-origem"></span> → <span id="fatura-destino"></span></p>
+          <p><strong>Data:</strong> <span id="fatura-data"></span></p>
+          <p><strong>Companhia:</strong> <span id="fatura-companhia"></span></p>
+          <p><strong>Valor:</strong> R$ <span id="fatura-valor"></span></p>
+        </div>
+        
+        <div class="btn-group">
+          <button onclick="baixarPDF()" class="btn-success">
+            📥 Baixar PDF
+          </button>
+          <button onclick="salvarFatura()" class="btn-secondary">
+            💾 Salvar Local
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="historicoContainer" style="margin-top: 30px; display:none;">
+      <h3>Histórico de Faturas</h3>
+      <div id="historicoLista"></div>
+    </div>
+  </div>
+
+  <!-- Biblioteca local - SEM INTERNET NECESSÁRIA -->
+  <script src="js/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

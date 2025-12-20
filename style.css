@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  min-height: 100vh;
+  padding: 15px;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+}
+
+form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0d47a1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #0d47a1, #1976d2);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(13, 71, 161, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.4);
+}
+
+.fatura-card {
+  background: white;
+  border: 2px solid #1976d2;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.fatura-info {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-success {
+  flex: 1;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-success:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  flex: 1;
+  background: #546e7a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #37474f;
+  transform: translateY(-2px);
+}
+
+.historico-item {
+  background: #f1f8e9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #388e3c;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+}
